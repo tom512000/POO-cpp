@@ -35,7 +35,7 @@ string extrait(const string & chaine, int position, char terminaison)
 }
 
 // Question 2
-string normalise(const string & chaine, int longueur, char c)
+string normalise(const string & chaine, int longueur, char c = ' ')
 {
     string res = chaine;
     if (res.length() < longueur) {
@@ -43,4 +43,18 @@ string normalise(const string & chaine, int longueur, char c)
     } else if (res.length() > longueur) {
         res = res.substr(0, longueur);
     }
+    return res;
+}
+
+// Question 3
+string compacte(const string & s, char c = ' ')
+{
+    string resultat = "" + s[0];
+
+    for (int i = 1; i < s.length(); ++i) {
+        if (s[i] != c || (s[i] == c && s[i - 1] != c)) {
+            resultat += s[i];
+        }
+    }
+    return resultat;
 }
