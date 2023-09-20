@@ -33,4 +33,5 @@ string normalise(const string & chaine, int longueur, char c = ' ')
     if (chaine.length() > longueur) {
         res = chaine.substr(longueur);
     }
+    return 0;
 }
