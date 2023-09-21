@@ -24,8 +24,7 @@ class Personne
             this->nom = "";
             this->prenom = "";
             this->age = 0;
-            cout << "Personne( " << this->nom;
-            cout << " , " << this->prenom << " , " << this->age << " ) : " << this << endl;
+            cout << "Personne() : " << this << endl;
         }
         
         Personne (const Personne & p)
@@ -33,8 +32,7 @@ class Personne
             (*this).nom = p.nom;
             (*this).prenom = p.prenom;
             (*this).age = p.age;
-            cout << "Personne( " << this->nom;
-            cout << " , " << this->prenom << " , " << this->age << " ) : " << this << endl;
+            cout << "Personne( " << &p << " ) : " << this << endl;
         }
 
         void affiche() const
@@ -85,6 +83,7 @@ class Personne
 
 // Cette fonction compare le nom, prenom et age de 2 instances de la classe Personne.
 // Si ces instances sont identiques, la fonction renvoie true, sinon la fonction renvoie false.
+// La fonction créé une copie des instances en paramètres (const & manquant)
 bool compare(Personne P1, Personne P2)
 {
     if (P1.getNom() == P2.getNom() && 
@@ -94,9 +93,17 @@ bool compare(Personne P1, Personne P2)
     return false;
 }
 
+int affiche(const Personne & P1)
+{
+    cout << "Nom    : " << P1.getNom() << endl;
+    cout << "Prenom : " << P1.getPrenom() << endl;
+    cout << "Age    : " << P1.getAge() << endl;
+    return 0;
+}
+
 int main()
 {
-    // Création des instances de la classe Personne (constructeur)
+    // Création des instances de la classe Personne (p1, p2 et p3)
     Personne p1 ("Dupont", "Gaston", 36);
     p1.affiche();
 
@@ -119,7 +126,47 @@ int main()
 
     // Test fonction compare (p1 et p3)
     cout << "Comparaison de p1 et p3 : ";
-    cout << compare(p1, p3) << endl;
+    if (compare(p1, p3)) {
+        cout << "Les instances sont identiques\n";
+    } else {
+        cout << "Les instances sont différentes\n";
+    }
+
+    // Test fonction afficherPersonne (p2)
+    affiche(p2);
     
     return 0;
 }
+
+/*
+./a.out 
+Personne( Dupont , Gaston , 36 ) : 0x7ffc11063b90
+Nom    : Dupont
+Prenom : Gaston
+Age    : 36
+Personne() : 0x7ffc11063be0
+Nom    : 
+Prenom : 
+Age    : 0
+Personne( 0x7ffc11063b90 ) : 0x7ffc11063c30
+Nom    : Dupont
+Prenom : Gaston
+Age    : 36
+Nom (p1)    : Dupont
+Prenom (p1) : Gaston
+Age (p1)    : 36
+Nom    : Sikora
+Prenom : Tom
+Age    : 19
+Comparaison de p1 et p3 : Personne( 0x7ffc11063c30 ) : 0x7ffc11063cd0
+Personne( 0x7ffc11063b90 ) : 0x7ffc11063c80
+~Personne() : 0x7ffc11063c80
+~Personne() : 0x7ffc11063cd0
+egaux
+Nom    : Sikora
+Prenom : Tom
+Age    : 19
+~Personne() : 0x7ffc11063c30
+~Personne() : 0x7ffc11063be0
+~Personne() : 0x7ffc11063b90
+*/
