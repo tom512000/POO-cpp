@@ -25,7 +25,7 @@ int main()
     p2.setAge(19);
     p2.affiche();
 
-    // Test fonction compare (p1 et p3)
+    // Test méthode compare (p1 et p3)
     cout << "Comparaison de p1 et p3 : ";
     if (compare(p1, p3)) {
         cout << "Les instances sont identiques\n";
@@ -33,7 +33,7 @@ int main()
         cout << "Les instances sont différentes\n";
     }
 
-    // Test fonction afficherPersonne (p2)
+    // Test méthode afficherPersonne (p2)
     affiche(p2);
     
     return 0;

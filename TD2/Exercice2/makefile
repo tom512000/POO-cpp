@@ -4,7 +4,7 @@ a.out : Objet.o Carton.o Principal.o
 Principal.o : Objet.h Carton.h Principal.cc
 	g++ -c Principal.cc
 
-Carton.o : Carton.h Carton.cc
+Carton.o : Carton.h Carton.cc Objet.h
 	g++ -c Carton.cc
 
 Objet.o : Objet.h Objet.cc
