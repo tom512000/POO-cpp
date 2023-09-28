@@ -16,13 +16,11 @@ Objet::Objet ()
 
 Objet::Objet (const string & nom, int volume, int poids) throw(invalid_argument)
 {
-    if (volume < 0 || poids < 0) {
+    if (volume < 0 || poids < 0)
         throw invalid_argument("Un ou plusieurs attributs sont négatifs.");
-    } else {
-        this->nom = nom;
-        this->volume = volume;
-        this->poids = poids;
-    }
+    this->nom = nom;
+    this->volume = volume;
+    this->poids = poids;
 }
 
 int Objet::getVolume() const
