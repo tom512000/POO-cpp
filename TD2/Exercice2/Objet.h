@@ -23,9 +23,10 @@ class Objet
         bool estVide() const;
         std::ostream & afficher(std::ostream &) const;
         std::istream & saisir(std::istream &);
+        bool operator== (const Objet &) const;
 };
 
 std::ostream & operator<<(std::ostream &, const Objet &);
-std::ostream & operator>>(std::ostream &, Objet &);
+std::istream & operator>>(std::istream &, Objet &);
 
 #endif

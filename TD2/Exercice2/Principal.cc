@@ -9,6 +9,7 @@ int main()
     Objet objet1;
     Objet objet2 ("Chaussure", 1, 5);
     Objet objet3 (objet2);
+    Objet objet4 (objet3);
 
     // Test des accesseurs (objet2)
     cout << "Volume (objet2) : " << objet2.getVolume() << endl;
@@ -26,7 +27,10 @@ int main()
     cout << objet2 << endl;
     
     // Test méthode saisir (objet1)
-    cin >> obj;
+    cin >> objet1;
+
+    // Test méthode operator== (objet3 et objet4)
+    cout << "Ces objets sont-ils identiques ? " << objet3.operator==(objet4) << endl;
 
     return 0;
 }

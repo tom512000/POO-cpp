@@ -66,14 +66,22 @@ ostream & operator<<(ostream & out, const Objet & obj){
     return obj.afficher(out);
 }
 
-ostream & Objet::saisir(ostream & in)
+istream & Objet::saisir(istream & in)
 {
-    in >> "Nom    : " >> this->nom;
-    in >> "Volume : " >> this->volume;
-    in >> "Poids  : " >> this->poids;
+    cout << "Nom    : ";
+    in >> this->nom;
+    cout << "Volume : ";
+    in >> this->volume;
+    cout << "Poids  : ";
+    in >> this->poids;
     return in;
 }
 
-ostream & operator>>(ostream & in, Objet & obj){
+istream & operator>>(istream & in, Objet & obj){
     return obj.saisir(in);
+}
+
+bool Objet::operator== (const Objet & obj) const
+{
+    return this->nom == obj.nom && this->volume == obj.volume && obj.poids == this->poids;
 }
