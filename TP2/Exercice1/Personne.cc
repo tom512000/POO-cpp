@@ -1,6 +1,5 @@
-#include <iostream>
 #include "Personne.h"
-
+#include <iostream>
 using namespace std;
 
 Personne::Personne (const string & nom, const string & prenom, int age)
@@ -79,10 +78,9 @@ bool compare(Personne P1, Personne P2)
     return false;
 }
 
-int affiche(const Personne & P1)
+void affiche(const Personne & P1)
 {
     cout << "Nom    : " << P1.getNom() << endl;
     cout << "Prenom : " << P1.getPrenom() << endl;
     cout << "Age    : " << P1.getAge() << endl;
-    return 0;
 }

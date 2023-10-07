@@ -32,7 +32,6 @@ int main()
     // Test méthode operator== (objet3 et objet4)
     cout << "Ces objets sont-ils identiques ? " << objet3.operator==(objet4) << endl;
 
-
     // Création des instances de la classe Carton
     Carton carton1 (1, 1);
     Carton carton2 (carton1);

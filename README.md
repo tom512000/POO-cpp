@@ -7,9 +7,8 @@
 - Barbara ROMANIUK
 
 ## Sommaire :
-- ✅ TD1
-- ❌ TD1 Complémentaire
-- ❌ TD2
-- ❌ TD3
-- ❌ TD4
-- ❌ TD5
+- ✅ TP1
+- ✅ TP1 Complémentaire
+- ❌ TP2 (Exercice 2 non fini)
+- ✅ TP3
+- ❌ TP4

@@ -1,6 +1,5 @@
 #ifndef __PERSONNE_H__
 #define __PERSONNE_H__
-
 #include <string>
 
 class Personne
@@ -26,6 +25,6 @@ class Personne
 };
 
 bool compare(Personne, Personne);
-int affiche(const Personne &);
+void affiche(const Personne &);
 
 #endif

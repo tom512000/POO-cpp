@@ -83,7 +83,7 @@ class Personne
 
 // Cette fonction compare le nom, prenom et age de 2 instances de la classe Personne.
 // Si ces instances sont identiques, la fonction renvoie true, sinon la fonction renvoie false.
-// La fonction créé une copie des instances en paramètres (const & manquant)
+// La fonction créée une copie des instances de Personne en paramètres afin de les comparer.
 bool compare(Personne P1, Personne P2)
 {
     if (P1.getNom() == P2.getNom() && 
@@ -93,12 +93,11 @@ bool compare(Personne P1, Personne P2)
     return false;
 }
 
-int affiche(const Personne & P1)
+void affiche(const Personne & P1)
 {
     cout << "Nom    : " << P1.getNom() << endl;
     cout << "Prenom : " << P1.getPrenom() << endl;
     cout << "Age    : " << P1.getAge() << endl;
-    return 0;
 }
 
 int main()
@@ -139,7 +138,7 @@ int main()
 }
 
 /*
-./a.out 
+./a.out
 Personne( Dupont , Gaston , 36 ) : 0x7ffc11063b90
 Nom    : Dupont
 Prenom : Gaston

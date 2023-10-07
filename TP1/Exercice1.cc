@@ -4,8 +4,6 @@ using namespace std;
 bool saisieDonnees(int &, char &, int &);
 int calcul(int, char, int, bool &);
 
-
-// Fonction principale
 int main()
 {
 
@@ -14,14 +12,13 @@ int main()
     bool booleen;
 
     if (saisieDonnees(nbr1, oper, nbr2)) {
-        //cout << "Opération demandée : " << nbr1 << ' ' << oper << ' ' << nbr2 << endl;
         calc = calcul(nbr1, oper, nbr2, booleen);
-        if (booleen) {
-            cout << nbr1 << oper << nbr2 << '=' << calc << endl;
-        } else {
+        if (!booleen) {
             cout << "Opération impossible" << endl;
             saisieDonnees(nbr1, oper, nbr2);
+            calc = calcul(nbr1, oper, nbr2, booleen);
         }
+        cout << nbr1 << oper << nbr2 << '=' << calc << endl;
     }
 
     return 0;
@@ -54,8 +51,8 @@ bool saisieDonnees(int & nbr1, char & oper, int & nbr2)
         }
         while ((oper != '+') && (oper != '-') && (oper != '*') && (oper != '/') && (oper != '%'));
     }
-
-   return res == 1;
+    
+    return res == 1;
 }
 
 // Etape 2
@@ -77,5 +74,20 @@ int calcul(int nbr1, char oper, int nbr2, bool & booleen) {
     } else {
         booleen = false;
     }
+
     return res;
 }
+
+/*
+./a.out
+Souhaitez vous saisir des données ? (0-non, 1-oui) 1
+Entrez l'opérande 1 (entier) : 6
+Entrez l'opérande 2 (entier) : 0
+Entrez l'opérateur (+, -, *, / ou %) : /
+Opération impossible
+Souhaitez vous saisir des données ? (0-non, 1-oui) 1
+Entrez l'opérande 1 (entier) : 6
+Entrez l'opérande 2 (entier) : 2
+Entrez l'opérateur (+, -, *, / ou %) : /
+6/2=3
+*/

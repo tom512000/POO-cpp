@@ -31,6 +31,7 @@ string extrait(const string & chaine, int position, char terminaison)
     } else {
         res = chaine.substr(position);
     }
+
     return res;
 }
 
@@ -38,23 +39,36 @@ string extrait(const string & chaine, int position, char terminaison)
 string normalise(const string & chaine, int longueur, char c = ' ')
 {
     string res = chaine;
+
     if (res.length() < longueur) {
         res.append(longueur - res.length(), c);
     } else if (res.length() > longueur) {
         res = res.substr(0, longueur);
     }
+
     return res;
 }
 
 // Question 3
-string compacte(const string & s, char c = ' ')
+string compacte(const string & s, char c)
 {
-    string resultat = "" + s[0];
+    string res(1, s[0]);
 
     for (int i = 1; i < s.length(); ++i) {
         if (s[i] != c || (s[i] == c && s[i - 1] != c)) {
-            resultat += s[i];
+            res += s[i];
         }
     }
-    return resultat;
+    
+    return res;
 }
+
+/*
+./a.out
+surpr
+surprise
+Quelle
+Quelle surpriseXXXXX
+Quele surprise
+ Quelllle surprise
+*/
