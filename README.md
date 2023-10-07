@@ -1,9 +1,9 @@
-# MR306 - Architecture des Réseaux
+# POO-C++
 
 ## Auteur :
 - Tom SIKORA
 
-## Professeur :
+## Professeure :
 - Barbara ROMANIUK
 
 ## Sommaire :
