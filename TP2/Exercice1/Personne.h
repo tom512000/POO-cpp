@@ -13,6 +13,7 @@ class Personne
         Personne (const std::string &, const std::string &, int);
         Personne ();
         Personne (const Personne &);
+        ~Personne();
         
         void affiche() const;
         std::string getNom() const;
@@ -21,7 +22,6 @@ class Personne
         void setNom(const std::string &);
         void setPrenom(const std::string &);
         void setAge(int);
-        ~Personne();
 };
 
 bool compare(Personne, Personne);
