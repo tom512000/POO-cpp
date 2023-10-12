@@ -27,11 +27,10 @@ int main()
 
     // Test fonction compare (p1 et p3)
     cout << "Comparaison de p1 et p3 : ";
-    if (compare(p1, p3)) {
+    if (compare(p1, p3))
         cout << "Les instances sont identiques\n";
-    } else {
+    else
         cout << "Les instances sont différentes\n";
-    }
 
     // Test fonction afficherPersonne (p2)
     affiche(p2);

@@ -1,5 +1,6 @@
 #ifndef __VECTEURND_H__
 #define __VECTEURND_H__
+#include <ostream>
 
 class VecteurND
 {
@@ -11,7 +12,7 @@ class VecteurND
         // 2)
         VecteurND (const VecteurND &);
         ~VecteurND ();
-        /*op =*/
+        VecteurND & operator=(const VecteurND &);
 
         // 1)
         VecteurND ();
@@ -20,8 +21,8 @@ class VecteurND
         VecteurND (unsigned int, const double *);
 
         // 3)
-        unsigned int getDimension()const;
-        void affiche(/**/) const;
+        unsigned int getDimension() const;
+        std::ostream & afficher(std::ostream &) const;
         double calculerProdScalaire(const VecteurND &) const /**/; // u = (Ux, Uy) et v = (Vx, Vy), u.v = Ux.Vx + Uy.Vy
         double calculerNorme() const; // √(x² + y²)
 };
