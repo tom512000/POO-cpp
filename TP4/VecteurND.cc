@@ -94,7 +94,7 @@ unsigned int VecteurND::getDimension() const
 ostream & VecteurND::afficher(ostream & out) const
 {
     out << "Dimension   : " << this->dim << endl;
-    out << "Coordonnées : ";
+    out << "Coordonnees : ";
 
     if (this->coord != NULL) {
         out << "[ " << this->coord[0];
@@ -115,17 +115,28 @@ double VecteurND::calculerNorme() const
     if (this->dim == 0)
         res = 0.0;
     else {
-        for (int i = 0; i < dim; ++i)
+        for (int i = 0; i < this->dim; ++i)
             res += coord[i] * coord[i];
-        res = sqrt(res);
     }
 
     return res;
 }
 
+double VecteurND::calculerProdScalaire(const VecteurND & v) const throw(invalid_argument)
+{
+    if (this->dim != v.dim)
+        throw invalid_argument("Les dimensions sont differentes !");
+
+    double product = 0.0;
+    for (int i = 0; i < this->dim; ++i)
+        product += coord[i] * v.coord[i];
+
+    return product;
+}
+
 /*VecteurND operator+(const VecteurND& other) const {
       if (dim != other.dim)
-          throw std::invalid_argument("Vector dimensions mismatch.");
+          throw std::invalid_argument("Les dimensions sont differentes !");
 
       VecteurND result(dim);
       for (unsigned int i = 0; i < dim; ++i)
@@ -137,7 +148,7 @@ double VecteurND::calculerNorme() const
   // Opérateur de soustraction de vecteurs
   VecteurND operator-(const VecteurND& other) const {
       if (dim != other.dim)
-          throw std::invalid_argument("Vector dimensions mismatch.");
+          throw std::invalid_argument("Les dimensions sont differentes !");
 
       VecteurND result(dim);
       for (unsigned int i = 0; i < dim; ++i)

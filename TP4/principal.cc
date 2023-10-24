@@ -17,25 +17,27 @@ int main()
     // Affichage des instances de VecteurND
     cout << "   vecteur1 : " << endl;
     vecteur1.afficher(cout);
-    cout << "   \nvecteur2 : " << endl;
+    cout << "   vecteur2 : " << endl;
     vecteur2.afficher(cout);
-    cout << "   \nvecteur3 : " << endl;
+    cout << "   vecteur3 : " << endl;
     vecteur3.afficher(cout);
-    cout << "   \nvecteur4 : " << endl;
+    cout << "   vecteur4 : " << endl;
     vecteur4.afficher(cout);
-    cout << "   \nvecteur5 : " << endl;
+    cout << "   vecteur5 : " << endl;
     vecteur5.afficher(cout);
 
     // Test accesseur getDimension (vecteur2)
     cout << "\nDimension (vecteur2) : " << vecteur2.getDimension() << endl;
 
-    // Test opérateur = (vecteur1 et vecteur3)
-    cout << "\nOpérateur = avec vecteur1 et vecteur3" << endl;
+    // Test méthode operator= (vecteur1 et vecteur3)
+    cout << "\nOperateur = avec vecteur1 et vecteur3" << endl;
     vecteur1 = vecteur3;
     vecteur1.afficher(cout);
 
-    // Test calculerNorme (vecteur4)
+    // Test méthode calculerNorme (vecteur4)
     cout << "\nNorme (vecteur4) : " << vecteur4.calculerNorme() << endl;
+
+    // Test méthode calculerProdScalaire ()
 
     return 0;
 }
