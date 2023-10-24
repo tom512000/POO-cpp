@@ -39,31 +39,67 @@ int Carton::contient(const Objet & obj) const
 {
     int indice = -1;
     for (int i = 0; i < this->contenu.size(); i++)
-    {
-        if (this->contenu[i] == obj) {
+        if (this->contenu[i] == obj)
             indice = i;
-        }
-    }
     return indice;
 }
 
-void ajouteObjet(const Objet & obj) throw (invalid_argument)
+void Carton::ajouteObjet(const Objet & obj) throw (invalid_argument)
 {
-    if (obj.estVide() || (this->poidsReel > this->poidsMax) || (this->volumeReel > this->volumeReel) || (this->nbObjets == Carton::max_Objets))
-        throw invalid_argument("Une ou plusieurs conditions ne sont pas respectées !");
+    if (obj.estVide())
+        throw std::invalid_argument("L'objet est vide.");
+
+    if (this->nbObjets >= Carton::max_Objets)
+        throw std::invalid_argument("Le carton est plein.");
+
+    if (this->poidsReel + obj.getPoids() > this->poidsMax)
+        throw std::invalid_argument("Le poids maximal du carton serait dépassé.");
+
+    if (this->volumeReel + obj.getVolume() > this->volumeMax)
+        throw std::invalid_argument("Le volume maximal du carton serait dépassé.");
+
+    contenu[this->nbObjets] = obj;
     this->nbObjets += 1;
-    this->volumeReel += obj->getVolume();
-    this->poidsReel += obj->getPoids();
-    
-    while ()
-    {
-        /* code */
-    }
-    
-    for (int i = 0; i < this->contenu.size(); i++)
-    {
-        if (this->contenu[i].estVide()) {
-            this->contenu[i] = obj;
-        }
-    }
+    this->poidsReel += obj.getPoids();
+    this->volumeReel += obj.getVolume();
+}
+
+Carton & Carton::operator+=(const Objet & obj)
+{
+    ajouteObjet(obj);
+    return *this;
+}
+
+const Objet & Carton::operator[](int index) const
+{
+    if (index < 0 || index >= nbObjets)
+        throw std::out_of_range("Index hors limites");
+    return contenu[index];
+}
+
+ostream & Carton::afficher(ostream & o) const
+{
+    o << endl << "Contenu du carton : " << endl;
+    for (int i = 0; i < nbObjets ; i++)
+        o << "Objet n*" << i+1 << " : \n" << (*this)[i] << endl;
+    return o;
+}
+
+ostream & operator<<(ostream & o, const Carton & c)
+{
+    return c.afficher(o);
+}
+
+void Carton::operator-=(const Objet & o) throw (std::invalid_argument)
+{
+    int index = contient(o);
+    if (index == -1)
+        throw std::invalid_argument("L'objet n'est pas dans le carton.");
+
+    for (int i = index; i < nbObjets - 1; i++)
+        contenu[i] = contenu[i + 1];
+
+    this->nbObjets -= 1;
+    this->poidsReel -= o.getPoids();
+    this->volumeReel -= o.getVolume();
 }

@@ -23,9 +23,15 @@ class Carton
         
     public:
         Carton(int, int) throw (std::invalid_argument);
-        Carton & operator= (const Carton &);
+        // Carton & operator=(const Carton &);
         int contient(const Objet &) const;
         void ajouteObjet(const Objet &) throw (std::invalid_argument);
+        Carton & operator+=(const Objet &);
+        const Objet & operator[](int) const;
+        std::ostream & afficher(std::ostream &) const;
+        void operator-=(const Objet &) throw (std::invalid_argument);
 };
+
+std::ostream & operator<<(std::ostream &, const Carton &);
 
 #endif
