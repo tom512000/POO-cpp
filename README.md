@@ -12,5 +12,5 @@
 - ✅ TP2
 - ✅ TP3
 - ❌ TP4 (Partie 2 non finie)
-- ❌ TP5
+- ❌ TP5 (méthode operator< non finie)
 - ❌ TP6

@@ -11,10 +11,8 @@ Item::Item(const string & nom, double prix, const string & chaine) throw (invali
   //this->prix = prix;
 }
 
-ostream & operator<< (ostream & o, const Item & e)
+Item::~Item()
 {
-  e.affiche(o);
-  return o;
 }
 
 void Item::affiche(ostream & out) const
@@ -26,4 +24,10 @@ void Item::affiche(ostream & out) const
 bool Item::operator== (const Item * i) const
 {
   return this->nom == i->nom && this->prix == i->prix && this->ingredients == i->ingredients;
+}
+
+ostream & operator<<(ostream & o, const Item & e)
+{
+  e.affiche(o);
+  return o;
 }

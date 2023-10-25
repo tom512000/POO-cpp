@@ -8,18 +8,20 @@
 
 class Item // classe abstraite (virtual)
 {
-  private:
+  private :
     std::string nom;
     double prix;
     Description ingredients;
 
   public :
+    virtual ~Item();
+
     Item(const std::string &, double, const std::string & = "") throw (std::invalid_argument);
 
     virtual void affiche(std::ostream &) const;
     virtual bool operator== (const Item *) const;
-    virtual bool operator< (const Item *) const = 0;
     virtual std::string getType() const = 0;
+    virtual bool operator< (const Item *) const = 0;
 };
 
 std::ostream & operator<< (std::ostream &, const Item &);
