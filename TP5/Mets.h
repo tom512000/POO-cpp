@@ -2,7 +2,9 @@
 #define __METS_H__
 
 #include "Item.h"
+
 #include <string>
+#include <stdexcept>
 
 class Mets : public Item
 {
@@ -14,7 +16,7 @@ class Mets : public Item
 
     virtual bool operator== (const Item *) const;
     virtual std::string getType() const;
-    virtual bool operator< (const Item *) const {};
+    virtual bool operator<(const Item *) const;
 };
 
 #endif

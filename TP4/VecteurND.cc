@@ -1,4 +1,5 @@
 #include "VecteurND.h"
+
 #include <stdexcept>
 #include <iostream>
 using namespace std;

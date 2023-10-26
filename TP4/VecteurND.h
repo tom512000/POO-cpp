@@ -1,7 +1,8 @@
 #ifndef __VECTEURND_H__
 #define __VECTEURND_H__
+
 #include <stdexcept>
-#include <ostream>
+#include <iostream>
 
 class VecteurND
 {

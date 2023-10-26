@@ -1,5 +1,6 @@
 #include "Objet.h"
 #include "Carton.h"
+
 #include <iostream>
 using namespace std;
 
@@ -29,7 +30,7 @@ int main()
     // Test méthode afficher (objet2)
     cout << "\n********** Question 4" << endl;
     cout << objet2 << endl;
-    
+
     // Test méthode saisir (objet1)
     cout << "********** Question 5" << endl;
     cin >> objet1;
@@ -61,7 +62,7 @@ int main()
     Carton C(1000,1000);
     C += Objet("Lampe", 5 , 50);
     C[0].afficher(cout);
-    
+
     // Test méthode afficher (C)
     C.afficher(cout);
 
@@ -72,7 +73,7 @@ int main()
     cout << "********** Question 13" << endl;
     carton3 -= objet2;
     cout << "carton3 contient-il l'objet2 ? " << carton3.contient(objet2) << endl;
-    
+
     return 0;
 }
 

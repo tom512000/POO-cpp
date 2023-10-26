@@ -1,9 +1,11 @@
 #ifndef __CARTON_H__
 #define __CARTON_H__
-#include <string>
+
+#include "Objet.h"
+
+#include <iostream>
 #include <stdexcept>
 #include <vector>
-#include "Objet.h"
 
 class Carton
 {
@@ -20,7 +22,7 @@ class Carton
         int poidsMax;
         int poidsReel;
         std::vector<Objet> contenu;
-        
+
     public:
         Carton(int, int) throw (std::invalid_argument);
         // Carton & operator=(const Carton &);

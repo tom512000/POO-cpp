@@ -1,7 +1,7 @@
 # POO-C++
 
 ## Auteur :
-- Tom SIKORA
+- Tom SIKORA (siko0001)
 
 ## Professeure :
 - Barbara ROMANIUK
@@ -12,5 +12,5 @@
 - ✅ TP2
 - ✅ TP3
 - ❌ TP4 (Partie 2 non finie)
-- ❌ TP5 (méthode operator< non finie)
+- ❌ TP5 (méthode Boisson::affiche)
 - ❌ TP6

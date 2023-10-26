@@ -1,4 +1,6 @@
 #include "Personne.h"
+
+#include <string>
 #include <iostream>
 using namespace std;
 
@@ -71,7 +73,7 @@ Personne::~Personne()
 
 bool compare(Personne P1, Personne P2)
 {
-    if (P1.getNom() == P2.getNom() && 
+    if (P1.getNom() == P2.getNom() &&
             P1.getPrenom() == P2.getPrenom() &&
             P1.getAge() == P2.getAge())
         return true;

@@ -11,7 +11,7 @@ class Description
     unsigned int taille;
     std::string * elements; // Allocation dynamique
 
-  public :
+  public:
     Description (const Description &);
     ~Description ();
     Description & operator= (const Description &);

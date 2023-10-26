@@ -1,4 +1,9 @@
 #include "Mets.h"
+#include "Item.h"
+#include "Boisson.h"
+
+#include <stdexcept>
+#include <typeinfo>
 #include <string>
 using namespace std;
 
@@ -10,7 +15,7 @@ Mets::Mets(const string & nom, double prix, const string & type, const string & 
   this->type = type;
 }
 
-bool Mets::operator== (const Item * I) const
+bool Mets::operator==(const Item * I) const
 {
   if(typeid(*I) == typeid(Mets))
   {
@@ -26,23 +31,20 @@ string Mets::getType() const
   return type;
 }
 
-/*bool Mets::operator< (const Item * I) const
+bool Mets::operator<(const Item * I) const
 {
-  if (typeid(*this) == typeid(I)) {
-    //return this < &I;
+  if (typeid(*I) == typeid(Boisson))
+    return false;
 
-  } else if (typeid(*this) == typeid(Boisson)) {
-    // Une Boisson est inférieure à un Mets
-    //return true;
-
-  } else if (typeid(*this) == typeid(Entree)) {
-    // Une Entree est inférieure à un Plat
+  Mets m = *dynamic_cast<const Mets *> (I);
+  if (this->type == "Entree" && m.type != "Entree")
     return true;
 
-  } else if (typeid(*this) == typeid(Plat) && typeid(I) != typeid(Boisson) && typeid(I) != typeid(Entree)) {
-    // Un Plat est inférieur à un Dessert
+  if (this->type == "Plat" && m.type == "Dessert")
     return true;
 
-  } else
-    //return false;
-}*/
+  if(this->type == m.type)
+    return true;
+
+  return false;
+}

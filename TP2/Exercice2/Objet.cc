@@ -1,7 +1,8 @@
-#include <iostream>
-#include <stdexcept>
 #include "Objet.h"
 
+#include <iostream>
+#include <stdexcept>
+#include <string>
 using namespace std;
 
 /*

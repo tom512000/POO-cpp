@@ -1,5 +1,6 @@
 #ifndef __PERSONNE_H__
 #define __PERSONNE_H__
+
 #include <string>
 
 class Personne
@@ -9,12 +10,12 @@ class Personne
         std::string prenom;
         int age;
 
-    public :
+    public:
         Personne (const std::string &, const std::string &, int);
         Personne ();
         Personne (const Personne &);
         ~Personne();
-        
+
         void affiche() const;
         std::string getNom() const;
         std::string getPrenom() const;

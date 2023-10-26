@@ -1,7 +1,9 @@
 #ifndef __OBJET_H__
 #define __OBJET_H__
+
 #include <string>
 #include <stdexcept>
+#include <iostream>
 
 class Objet
 {

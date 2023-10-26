@@ -38,7 +38,7 @@ bool saisieDonnees(int * nbr1, char * oper, int * nbr2)
     while (res != 0 && res != 1);
 
     if (res == 1) {
-        
+
         // Saisie du premier opérande
         cout << "Entrez l'opérande 1 (entier) : ";
         cin >> *nbr1;

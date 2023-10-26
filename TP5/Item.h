@@ -2,18 +2,19 @@
 #define __ITEM_H__
 
 #include "Description.h"
+
 #include <stdexcept>
 #include <string>
 #include <iostream>
 
 class Item // classe abstraite (virtual)
 {
-  private :
+  private:
     std::string nom;
     double prix;
     Description ingredients;
 
-  public :
+  public:
     virtual ~Item();
 
     Item(const std::string &, double, const std::string & = "") throw (std::invalid_argument);

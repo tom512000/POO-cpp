@@ -1,4 +1,5 @@
 #include "Personne.h"
+
 #include <iostream>
 using namespace std;
 
@@ -34,7 +35,7 @@ int main()
 
     // Test fonction afficherPersonne (p2)
     affiche(p2);
-    
+
     return 0;
 }
 
@@ -45,8 +46,8 @@ Nom    : Dupont
 Prenom : Gaston
 Age    : 36
 Personne() : 0x7ffc11063be0
-Nom    : 
-Prenom : 
+Nom    :
+Prenom :
 Age    : 0
 Personne( 0x7ffc11063b90 ) : 0x7ffc11063c30
 Nom    : Dupont
