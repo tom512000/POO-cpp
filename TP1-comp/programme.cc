@@ -1,5 +1,5 @@
 #include "variables.h"
-#include "variables.h"
+//#include "variables.h"
 #include <iostream>
 
 int main()

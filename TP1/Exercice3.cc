@@ -11,25 +11,24 @@ int main()
     cout << "Entrez une chaine de caracteres : ";
     cin >> chaine;
 
-    if (estPalindrome(chaine)) {
+    if (estPalindrome(chaine))
         cout << "La chaine est un palindrome." << endl;
-    } else {
+    else
         cout << "La chaine n'est pas un palindrome." << endl;
-    }
 
     return 0;
 }
 
-bool estPalindrome(const string & str) {
+bool estPalindrome(const string & str)
+{
     int taille = str.length();
     bool res = true;
     
     // On parcours la moitié de la chaîne
     for (int i = 0; i < taille / 2; ++i) {
         // On compare les caractères de chaque côté
-        if (str[i] != str[taille - i - 1]) {
+        if (str[i] != str[taille - i - 1])
             res = false;
-        }
     }
     
     return res;

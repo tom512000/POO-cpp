@@ -11,10 +11,11 @@ class Personne
         int age;
 
     public:
+        ~Personne();
+
         Personne (const std::string &, const std::string &, int);
         Personne ();
         Personne (const Personne &);
-        ~Personne();
 
         void affiche() const;
         std::string getNom() const;

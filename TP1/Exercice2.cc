@@ -26,11 +26,10 @@ string extrait(const string & chaine, int position, char terminaison)
     string res;
     int poslet = chaine.find(terminaison, position);
 
-    if (poslet != -1) {
+    if (poslet != -1)
         res = chaine.substr(position, poslet - position);
-    } else {
+    else
         res = chaine.substr(position);
-    }
 
     return res;
 }
@@ -40,11 +39,10 @@ string normalise(const string & chaine, int longueur, char c = ' ')
 {
     string res = chaine;
 
-    if (res.length() < longueur) {
+    if (res.length() < longueur)
         res.append(longueur - res.length(), c);
-    } else if (res.length() > longueur) {
+    else if (res.length() > longueur)
         res = res.substr(0, longueur);
-    }
 
     return res;
 }
@@ -55,9 +53,8 @@ string compacte(const string & s, char c)
     string res(1, s[0]);
 
     for (int i = 1; i < s.length(); ++i) {
-        if (s[i] != c || (s[i] == c && s[i - 1] != c)) {
+        if (s[i] != c || (s[i] == c && s[i - 1] != c))
             res += s[i];
-        }
     }
     
     return res;

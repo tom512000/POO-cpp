@@ -35,12 +35,13 @@ int * initialisePointeur()
 {
     int *ptr = new int (5);
     cout << "Valeur : " << ptr << " Adresse : " << &ptr << " Valeur (pointeur) : " << *ptr << endl;
+    
     return ptr;
 }
 
 void decouvertePointeurs()
 {
-    cout << "\n********** Exercice 2 - Question 1 **********";
+    cout << "\n********** Exercice 2 - Question 1";
     int i = -1;
     unsigned int ui = 1;
     string s = "Hello";
@@ -53,7 +54,7 @@ void decouvertePointeurs()
     cout << "Valeur : " << d << " Adresse : " << &d << " Taille : " << sizeof(d) << endl;
     cout << "Valeur : " << ld << " Adresse : " << &ld << " Taille : " << sizeof(ld) << endl;
 
-    cout << "\n********** Exercice 2 - Question 2 **********";
+    cout << "\n********** Exercice 2 - Question 2";
     int *pi = &i;
     unsigned int *pui = &ui;
     string *ps = &s;
@@ -67,7 +68,7 @@ void decouvertePointeurs()
     cout << "Valeur : " << pld << " Adresse : " << &pld << " Taille : " << sizeof(pld) << endl;
     // La valeur contenue dans les pointeurs est l'adresse de la variable à laquelle elle fait référence.
 
-    cout << "\n********** Exercice 2 - Question 3 **********";
+    cout << "\n********** Exercice 2 - Question 3";
     *ps = "Hi";
     cout << "\nValeur : " << s << endl;
     cout << "Valeur : " << *ps << endl;
@@ -75,7 +76,7 @@ void decouvertePointeurs()
     // Exercice 2 - Question 4
     // Pas de new donc pas de delete[]
 
-    cout << "\n********** Exercice 3 - Question 2 **********";
+    cout << "\n********** Exercice 3 - Question 2";
     cout << "\n********** void initialisePointeur(int *);";
     cout << "\nValeur : " << pi << " Adresse : " << &pi << " Valeur (pointeur) : " << *pi << endl;
     initialisePointeur(pi);
@@ -100,25 +101,26 @@ void decouvertePointeurs()
 }
 
 /*
-********** Exercice 2 - Question 1 **********
+./a.out
+********** Exercice 2 - Question 1
 Valeur : -1 Adresse : 0x7ffe553916c8 Taille : 4
 Valeur : 1 Adresse : 0x7ffe553916cc Taille : 4
 Valeur : Hello Adresse : 0x7ffe55391710 Taille : 32
 Valeur : 3.14159 Adresse : 0x7ffe553916d0 Taille : 8
 Valeur : 0.00275 Adresse : 0x7ffe55391700 Taille : 16
 
-********** Exercice 2 - Question 2 **********
+********** Exercice 2 - Question 2
 Valeur : 0x7ffe553916c8 Adresse : 0x7ffe553916d8 Taille : 8
 Valeur : 0x7ffe553916cc Adresse : 0x7ffe553916e0 Taille : 8
 Valeur : 0x7ffe55391710 Adresse : 0x7ffe553916e8 Taille : 8
 Valeur : 0x7ffe553916d0 Adresse : 0x7ffe553916f0 Taille : 8
 Valeur : 0x7ffe55391700 Adresse : 0x7ffe553916f8 Taille : 8
 
-********** Exercice 2 - Question 3 **********
+********** Exercice 2 - Question 3
 Valeur : Hi
 Valeur : Hi
 
-********** Exercice 3 - Question 2 **********
+********** Exercice 3 - Question 2
 ********** void initialisePointeur(int *);
 Valeur : 0x7ffe553916c8 Adresse : 0x7ffe553916d8 Valeur (pointeur) : -1
 Valeur : 0x7ffe553916c8 Adresse : 0x7ffe553916a8 Valeur (pointeur) : -1

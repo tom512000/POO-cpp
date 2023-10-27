@@ -3,32 +3,36 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <vector>
 
 class VecteurND
 {
     private:
-        unsigned int dim;
-        double * coord; // Allocation dynamique
+        std::vector<double> coord;
 
     public:
-        // 2)
         VecteurND (const VecteurND &);
         ~VecteurND ();
         VecteurND & operator=(const VecteurND &);
 
-        // 1)
         VecteurND ();
         VecteurND (unsigned int);
         VecteurND (unsigned int, double);
-        VecteurND (unsigned int, const double *); // Allocation statique
+        VecteurND (unsigned int, const double *);
 
-        // 3)
         unsigned int getDimension() const;
         std::ostream & afficher(std::ostream &) const;
+        std::istream & saisir(std::istream &);
         double calculerProdScalaire(const VecteurND &) const throw (std::invalid_argument);
-        // u = (Ux, Uy) et v = (Vx, Vy), u.v = Ux.Vx + Uy.Vy
         double calculerNorme() const;
-        // √(x² + y²)
+        VecteurND operator+(const VecteurND &) const;
+        VecteurND operator-(const VecteurND &) const;
+        VecteurND operator*(double produit) const;
+        bool operator<(const VecteurND &) const;
+        double & operator[](int);
 };
+
+std::ostream & operator<<(std::ostream &, const VecteurND &);
+std::istream & operator>>(std::istream &, VecteurND &);
 
 #endif

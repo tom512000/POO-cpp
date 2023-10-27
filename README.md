@@ -11,6 +11,6 @@
 - ✅ TP1 Complémentaire
 - ✅ TP2
 - ✅ TP3
-- ❌ TP4 (Partie 2 non finie)
+- ✅ TP4
 - ❌ TP5 (méthode Boisson::affiche)
 - ❌ TP6

@@ -56,8 +56,10 @@ bool saisieDonnees(int & nbr1, char & oper, int & nbr2)
 }
 
 // Etape 2
-int calcul(int nbr1, char oper, int nbr2, bool & booleen) {
+int calcul(int nbr1, char oper, int nbr2, bool & booleen)
+{
     int res;
+    
     if (nbr2 != 0) {
         booleen = true;
         if (oper == '+') {
@@ -71,9 +73,8 @@ int calcul(int nbr1, char oper, int nbr2, bool & booleen) {
         } else if (oper == '%') {
             res = nbr1 % nbr2;
         }
-    } else {
+    } else
         booleen = false;
-    }
 
     return res;
 }

@@ -15,6 +15,7 @@ class Personne
             this->nom = nom;
             this->prenom = prenom;
             this->age = age;
+            
             cout << "Personne( " << this->nom;
             cout << " , " << this->prenom << " , " << this->age << " ) : " << this << endl;
         }
@@ -24,6 +25,7 @@ class Personne
             this->nom = "";
             this->prenom = "";
             this->age = 0;
+            
             cout << "Personne() : " << this << endl;
         }
         
@@ -32,6 +34,7 @@ class Personne
             (*this).nom = p.nom;
             (*this).prenom = p.prenom;
             (*this).age = p.age;
+            
             cout << "Personne( " << &p << " ) : " << this << endl;
         }
 
@@ -125,11 +128,10 @@ int main()
 
     // Test fonction compare (p1 et p3)
     cout << "Comparaison de p1 et p3 : ";
-    if (compare(p1, p3)) {
+    if (compare(p1, p3))
         cout << "Les instances sont identiques\n";
-    } else {
+    else
         cout << "Les instances sont différentes\n";
-    }
 
     // Test fonction afficherPersonne (p2)
     affiche(p2);

@@ -14,6 +14,7 @@ Carton::Carton (int volumeMax, int poidsMax) throw(invalid_argument)
 {
     if (volumeMax <= 0 || poidsMax <= 0)
         throw invalid_argument("Un ou plusieurs attributs sont négatifs ou nuls.");
+    
     this->volumeMax = volumeMax;
     this->poidsMax = poidsMax;
     this->contenu = vector<Objet>(Carton::max_Objets);
@@ -22,8 +23,7 @@ Carton::Carton (int volumeMax, int poidsMax) throw(invalid_argument)
     this->poidsReel = 0;
 }
 
-/*
-Carton & Carton::operator= (const Carton & crt)
+/*Carton & Carton::operator= (const Carton & crt)
 {
     this->volumeMax = crt.volumeMax;
     this->poidsMax = crt.poidsMax;
@@ -32,15 +32,17 @@ Carton & Carton::operator= (const Carton & crt)
     this->poidsReel = crt.poidsReel;
     this->contenu = crt.contenu;
     return *this;
-}
-*/
+}*/
 
 int Carton::contient(const Objet & obj) const
 {
     int indice = -1;
-    for (int i = 0; i < this->contenu.size(); i++)
+    
+    for (int i = 0; i < this->contenu.size(); i++) {
         if (this->contenu[i] == obj)
             indice = i;
+    }
+    
     return indice;
 }
 
@@ -67,6 +69,7 @@ void Carton::ajouteObjet(const Objet & obj) throw (invalid_argument)
 Carton & Carton::operator+=(const Objet & obj)
 {
     ajouteObjet(obj);
+    
     return *this;
 }
 
@@ -74,6 +77,7 @@ const Objet & Carton::operator[](int index) const
 {
     if (index < 0 || index >= nbObjets)
         throw std::out_of_range("Index hors limites");
+    
     return contenu[index];
 }
 
@@ -82,6 +86,7 @@ ostream & Carton::afficher(ostream & o) const
     o << endl << "Contenu du carton : " << endl;
     for (int i = 0; i < nbObjets ; i++)
         o << "Objet n*" << i+1 << " : \n" << (*this)[i] << endl;
+    
     return o;
 }
 
@@ -93,6 +98,7 @@ ostream & operator<<(ostream & o, const Carton & c)
 void Carton::operator-=(const Objet & o) throw (std::invalid_argument)
 {
     int index = contient(o);
+    
     if (index == -1)
         throw std::invalid_argument("L'objet n'est pas dans le carton.");
 

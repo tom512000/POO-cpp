@@ -20,23 +20,24 @@ int main()
     return 0;
 }
 
-int* creeSuiteVide(int tailleMax) {
+int* creeSuiteVide(int tailleMax)
+{
     int* suite = new int[tailleMax];
     
-    for (int i = 0; i < tailleMax; ++i) {
+    for (int i = 0; i < tailleMax; ++i)
         suite[i] = 0;
-    }
 
     return suite;
 }
 
-void initialise(int* suite, int taille, int valeurMax) {
-    for (int i = 0; i < taille; ++i) {
+void initialise(int* suite, int taille, int valeurMax)
+{
+    for (int i = 0; i < taille; ++i)
         suite[i] = rand() % valeurMax + 1;
-    }
 }
 
-void saisieJeu(const int* suite, int taille, int& quelElement, int& valeur) {
+void saisieJeu(const int* suite, int taille, int& quelElement, int& valeur)
+{
     do {
         cout << "Saisir l'index de l'élément (entre 0 et " << taille - 1 << "): ";
         cin >> quelElement;
@@ -48,24 +49,27 @@ void saisieJeu(const int* suite, int taille, int& quelElement, int& valeur) {
     } while (valeur < 1 || valeur > suite[quelElement]);
 }
 
-void affiche(const int* suite, int taille) {
-    for (int i = 0; i < taille; ++i) {
+void affiche(const int* suite, int taille)
+{
+    for (int i = 0; i < taille; ++i)
         cout << suite[i] << " ";
-    }
     cout << endl;
 }
 
-bool finJeu(const int* suite, int taille) {
+bool finJeu(const int* suite, int taille)
+{
     bool res = true;
     
     for (int i = 0; i < taille; ++i) {
         if (suite[i] != 0)
             res = false;
     }
+    
     return res;
 }
 
-int simulePartie(int* suite, int taille) {
+int simulePartie(int* suite, int taille)
+{
     int joueur = 1;
 
     while (!finJeu(suite, taille)) {
@@ -75,17 +79,17 @@ int simulePartie(int* suite, int taille) {
         saisieJeu(suite, taille, quelElement, valeur);
         suite[quelElement] -= valeur;
 
-        if (joueur == 1) {
+        if (joueur == 1)
             joueur = 2;
-        } else {
+        else
             joueur = 1;
-        }
     }
 
     return joueur;
 }
 
-void jouerPartie(int tailleMax, int valeurMax) {
+void jouerPartie(int tailleMax, int valeurMax)
+{
     int* suite = creeSuiteVide(tailleMax);
     initialise(suite, tailleMax, valeurMax);
 
@@ -97,7 +101,7 @@ void jouerPartie(int tailleMax, int valeurMax) {
 }
 
 /*
-.\a.out
+./a.out
 La partie commence
 6 9 8 5 9 2 4
 Saisir l'index de l'├®l├®ment (entre 0 et 6): 4

@@ -24,8 +24,10 @@ class Carton
         std::vector<Objet> contenu;
 
     public:
-        Carton(int, int) throw (std::invalid_argument);
         // Carton & operator=(const Carton &);
+        
+        Carton(int, int) throw (std::invalid_argument);
+        
         int contient(const Objet &) const;
         void ajouteObjet(const Objet &) throw (std::invalid_argument);
         Carton & operator+=(const Objet &);

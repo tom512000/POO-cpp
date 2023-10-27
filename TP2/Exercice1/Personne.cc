@@ -9,6 +9,7 @@ Personne::Personne (const string & nom, const string & prenom, int age)
     this->nom = nom;
     this->prenom = prenom;
     this->age = age;
+    
     cout << "Personne( " << this->nom;
     cout << " , " << this->prenom << " , " << this->age << " ) : " << this << endl;
 }
@@ -18,6 +19,7 @@ Personne::Personne ()
     this->nom = "";
     this->prenom = "";
     this->age = 0;
+    
     cout << "Personne() : " << this << endl;
 }
 
@@ -26,6 +28,7 @@ Personne::Personne (const Personne & p)
     (*this).nom = p.nom;
     (*this).prenom = p.prenom;
     (*this).age = p.age;
+    
     cout << "Personne( " << &p << " ) : " << this << endl;
 }
 
